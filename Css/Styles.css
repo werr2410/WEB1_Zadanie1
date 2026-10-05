@@ -12,7 +12,18 @@
     --space: 20px;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../Fonts/Montserrat.ttf') format('truetype-variations');
+  font-weight: 100 900; 
+  font-style: normal;
+  font-display: swap;
+}
+
 body.main {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+
     min-width: 100vh;
     background-color: var(--background-Color);
 
