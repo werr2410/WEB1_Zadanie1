@@ -147,11 +147,12 @@ body.main {
     border-radius: var(--radius);
 }
 
-.Profile-Me {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+.Profil-aside {
+    margin-top: 25px;
+    padding: 15px 20px; 
+    background: rgba(56, 189, 248, 0.08);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .Profile-Me * {
@@ -161,12 +162,6 @@ body.main {
 .Profile-Me img {
     width: 25%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.Profile-me-text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .Main-Header {
