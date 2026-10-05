@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Rozvrh hodin </title>
+    <meta name="description" content="Týždenný rozvrh hodín, prednášok a cvičení Andria Horbunova, študenta IKT na Fakulte elektrotechniky a informatiky STU v Bratislave.">
+
+    <meta property="og:title" content="Andrii Horbunov — Rozvrh hodin | IKT STU">
+    <meta property="og:description" content="Pozrite si môj rozvrh hodín, prednášok (Digital Communication, Prenosové systémy a siete) a cviчений počas semestra na STU FEI.">
+    <meta property="og:image" content="../Img/Nagiev3.png">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../Css/Styles.css">
+</head>
+<body class="main">
+
+    <main class="main-block-information Grey-Glass">
+        <section class="Schedule-title">
+            <h2>Kedy ma zastihnete</h2>
+
+            <div class="schedule-filters">
+                <button class="filter-btn active" data-filter="everything">Vsetko</button>
+                <button class="filter-btn" data-filter="lection">Prednášky</button>
+                <button class="filter-btn" data-filter="practical">Cvičenia</button>
+            </div>
+        </section>
+
+        <div id="no-classes-message" class="hidden-message">
+            Pre zvolený filter sa nenašli žiadne položky.
+        </div>
+
+        <div class="table-responsive">
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Čas</th>
+                        <th>Pondelok</th>
+                        <th>Utorok</th>
+                        <th>Streda</th>
+                        <th>Štvrtok</th>
+                        <th>Piatok</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>07:00</td>
+                        <td class="empty monday"></td>
+                        <td class="empty tuesday"></td>
+                        <td class="empty wednesday"></td>
+                        <td class="empty thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>08:00</td>
+                        <td class="empty monday"></td>
+                        <td class="empty lection tuesday" rowspan="2">
+                            <strong> Digital Communication 2</strong> <br>
+                            <span>AB300</span>
+                        </td>
+                        <td class="empty wednesday"></td>
+                        <td class="empty lection thursday" rowspan="2">
+                            <strong> Prenosove systemy a siete </strong><br>
+                            <span>
+                                AB150
+                            </span>
+                        </td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>09:00</td>
+                        <td                         class="empty monday"></td>
+                        <td style="display: none;"  class="empty lection tuesday"></td>
+                        <td                         class="empty wednesday"></td>
+                        <td style="display: none;"  class="empty lection thursday"></td>
+                        <td                         class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>10:00</td>
+                        
+                        <td class="empty lection monday" rowspan="2">
+                            <strong> Siete novej generacie </strong>
+                            <br>
+                            <span> 
+                                B715
+                            </span>
+                        
+                        </td>
+                        <td class="empty lection tuesday" rowspan="2">
+                            <strong> Web tecnology 1</strong>
+                            <br>
+                            <span>CD150</span>
+                        </td>
+                        <td class="empty wednesday"></td>
+                        <td class="empty practical thursday" rowspan="2">
+                            <strong> Spracovanie multimedia </strong>
+                            <br>
+                            <span>
+                                B427
+                            </span>
+                        </td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>11:00</td>
+                        <td style="display: none;" class="empty lection monday"></td>
+                        <td style="display: none;" class="empty lection tuesday"></td> 
+                        <td class="empty physicalEducation wednesday" rowspan="2">
+                            <strong> Telesna kultura 5 </strong>
+                            <br>
+                            <span>
+                                E009
+                            </span>
+                        </td>
+                        <td style="display: none;" class="empty practical thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>12:00</td>
+                        <td class="empty monday"></td>
+                        <td class="empty tuesday"></td>
+                        <td class="empty physicalEducation wednesday" style="display: none;"></td> 
+                        <td class="empty thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>13:00</td>
+                        <td class="empty practical monday" rowspan="2">
+                            <strong>Webove technologie 1</strong>
+                            <br>
+                            <span>C137</span>
+                        </td>
+
+                        <td class="empty practical tuesday" rowspan="2">
+                            <strong>Digital Communication 2</strong>
+                            <br>
+                            <span>B617</span>
+                        </td>
+
+                        <td class="empty lection wednesday" rowspan="2">
+                            <strong>Spracovanie multimedia</strong>
+                            <br>
+                            <span>AB150</span>
+                        </td>
+
+                        <td class="empty practical thursday" rowspan="2">
+                            <strong>Prenosove systemy a siete</strong>
+                            <br>
+                            <span>AB150</span>
+                        </td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>14:00</td>
+                        <td style="display: none;" class="empty practical monday"></td>
+                        <td style="display: none;" class="empty practical tuesday"></td>
+                        <td style="display: none;" class="empty lection wednesday"></td>
+                        <td style="display: none;" class="empty practical thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>15:00</td>
+                        <td class="empty practical monday" rowspan="2">
+                            <strong>Siete novej generacie</strong>
+                            <br>
+                            <span>B527</span>
+                        </td>
+                        <td class="empty tuesday"></td>
+                        <td class="empty wednesday"></td>
+                        <td class="empty thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>16:00</td>
+                        <td style="display: none;" class="empty practical monday"></td>
+                        <td class="empty tuesday"></td>
+                        <td class="empty wednesday"></td>
+                        <td class="empty thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>17:00</td>
+                        <td class="empty monday"></td>
+                        <td class="empty tuesday"></td>
+                        <td class="empty wednesday"></td>
+                        <td class="empty thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>18:00</td>
+                        <td class="empty monday"></td>
+                        <td class="empty tuesday"></td>
+                        <td class="empty wednesday"></td>
+                        <td class="empty thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>19:00</td>
+                        <td class="empty monday"></td>
+                        <td class="empty tuesday"></td>
+                        <td class="empty wednesday"></td>
+                        <td class="empty thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>
+
+                    <tr>
+                        <td>20:00</td>
+                        <td class="empty monday"></td>
+                        <td class="empty tuesday"></td>
+                        <td class="empty wednesday"></td>
+                        <td class="empty thursday"></td>
+                        <td class="empty friday"></td>
+                    </tr>  
+                </tbody>
+            </table>
+        </div>
+
+        <div class="semester-progress-container">
+
+            <div class="progress-labels">
+                <span>Uplynulý semester</span>
+                <span id="progress-percent">0%</span>
+            </div>
+
+            <div class="progress-bar-bg">
+                <div id="progress-bar-fill" class="progress-bar-fill"></div>
+            </div>
+
+            <div class="Semester-dates">
+                <div id="START-SEMESTER">loading...</div>
+                <div id="END-SEMESTER">loading...</div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <nav class="main-navigation Grey-Glass">   
+        <ul>
+            <li>
+                <a class="navigation-buttons" href="../index.html">
+                    <img src="../Img/Icons/home.png" alt="Logo: Domov">
+                    <div class="navigation-list-description">Domov</div>
+                </a>
+            </li>
+
+            <li>
+                <a class="navigation-buttons" href="./cv.html">
+                    <img src="../Img/Icons/resume.png" alt="Logo: Zivotopis">
+                    <div class="navigation-list-description">Zivotopis</div>
+                </a>
+            </li>
+            
+            <li>
+                <a class="navigation-buttons" href="./workspace.html">
+                    <img src="../Img/Icons/desk.png" alt="Logo: Pracovne prostredie">
+                    <div class="navigation-list-description">Pracovne prostredie</div>
+                </a>
+            </li>
+
+            <li>
+                <a class="navigation-buttons" href="#">
+                    <img src="../Img/Icons/schdule.png" alt="Logo: Rozvrh">
+                    <div class="navigation-list-description">Rozvrh</div>
+                </a>
+            </li>
+
+            <li>
+                <a class="navigation-buttons" href="./map.html">
+                    <img src="../Img/Icons/map.png" alt="Logo: Mapa">
+                    <div class="navigation-list-description">Mapa</div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <footer class="main-footer">
+        <address>
+            Vytvoril <strong>Andrii Horbunov</strong> (2026) | 
+            Kontakt: <a href="mailto:vas-email@stuba.sk">xhorbunov@stuba.sk</a> | 
+            <a href="URL_NA_ZDROJ" target="_blank">Odkazy na zdroje</a>
+        </address>
+    </footer>
+    
+    <script src="../Js/script.js"></script>
+</body>
+</html>

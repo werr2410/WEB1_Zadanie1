@@ -1,0 +1,36 @@
+@media print {
+    .main-navigation {
+        display: none !important;
+    }
+    
+    .main-footer address a,
+    .main-footer address span.details {
+        display: none !important;
+    }
+    
+    .main-footer,
+    body.main {
+        background: none !important;
+        background-color: white !important;
+    }
+
+    .main-block-information {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        color: black !important;
+        background: white !important;
+    }
+
+    .cv-left-column, .cv-right-column {
+        background: white !important;
+        color: black !important;
+    }
+
+    .cv-address a {
+        color: black !important;
+        text-decoration: none;
+    }
+}

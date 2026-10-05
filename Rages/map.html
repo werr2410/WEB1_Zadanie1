@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mapa </title>
+    <meta name="description" content="Interaktívna mapa s vyznačenými dôležitými miestami, ako sú STU FEI v Bratislave a internát Mladosť, vrátane výpočtu vzdialeností.">
+
+    <meta property="og:title" content="Andrii Horbunov — Mapa & Miesta | IKT STU">
+    <meta property="og:description" content="Pozrite si interaktívnu mapu miest spojených s mojím štúdiom na STU FEI v Bratislave (fakulta, internát) a nástrojom na výpočet vzdialeností.">
+    <meta property="og:image" content="../Img/Nagiev3.png">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../Css/Styles.css">
+</head>
+<body class="main">
+    
+    <main class="main-block-information Grey-Glass">
+        <h1>Kde ma najdete</h1>
+        
+        <p id="map-instructions">
+            Na mape sú trvalo vyznačené škola STU FEI, Bratislava a Internát Mladosť. 
+        </p>
+
+        <div id="map" style="height: 400px; width: 100%; margin-top: 1rem;"></div>
+
+        <br>
+
+        <div class="map-controls">
+            <div>
+                <label for="start-point">Začiatok:</label>
+                <select class="filter-btn" id="start-point"></select>
+            </div>
+
+            <div>
+                <label for="end-point">Cieľ:</label>
+                <select class="filter-btn" id="end-point"></select>
+            </div>
+
+            <div>
+                <button id="calculate-btn" class="filter-btn" type="button">Vypočítať vzdialenosť</button>
+            </div>
+        </div>
+
+        <div id="distance-result"></div>
+
+        <div class="saved-points-container">
+            <h3>Pridané body</h3>
+            <ul id="points-list"></ul>
+        </div>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    </main>
+
+
+    <nav class="main-navigation Grey-Glass">   
+        <ul>
+            <li>
+                <a class="navigation-buttons" href="../index.html">
+                    <img src="../Img/Icons/home.png" alt="Logo: Domov">
+                    <div class="navigation-list-description">Domov</div>
+                </a>
+            </li>
+
+            <li>
+                <a class="navigation-buttons" href="./cv.html">
+                    <img src="../Img/Icons/resume.png" alt="Logo: Zivotopis">
+                    <div class="navigation-list-description">Zivotopis</div>
+                </a>
+            </li>
+            
+            <li>
+                <a class="navigation-buttons" href="./workspace.html">
+                    <img src="../Img/Icons/desk.png" alt="Logo: Pracovne prostredie">
+                    <div class="navigation-list-description">Pracovne prostredie</div>
+                </a>
+            </li>
+
+            <li>
+                <a class="navigation-buttons" href="./schedule.html">
+                    <img src="../Img/Icons/schdule.png" alt="Logo: Rozvrh">
+                    <div class="navigation-list-description">Rozvrh</div>
+                </a>
+            </li>
+
+            <li>
+                <a class="navigation-buttons" href="#">
+                    <img src="../Img/Icons/map.png" alt="Logo: Mapa">
+                    <div class="navigation-list-description">Mapa</div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <footer class="main-footer">
+        <address>
+            Vytvoril <strong>Andrii Horbunov</strong> (2026) | 
+            Kontakt: <a href="mailto:vas-email@stuba.sk">xhorbunov@stuba.sk</a> | 
+            <a href="URL_NA_ZDROJ" target="_blank">Odkazy na zdroje</a>
+        </address>
+    </footer>
+
+    <script src="../Js/Map.js"></script>
+</body>
+</html>
