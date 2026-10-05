@@ -36,6 +36,115 @@ body.main {
     margin: 0;
 }
 
+
+.header-view {
+    z-index: 999;
+    position: fixed;
+    top: 5vh;
+    left: 5%;
+
+    width: 20vw;
+    height: 10vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--text-color);
+
+    transition: height 0.4s ease;
+}
+
+.between-section {
+    position: absolute;
+
+    height: 10vh;
+    width: 20vw;
+
+    top: 5vh;
+    left: 5%;
+    z-index: 999;
+
+    opacity: 0;
+}
+
+.header-view * {
+    height: 50%;
+    margin: auto;
+}
+
+.header-view article {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+}
+
+.header-view div {
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid grey;
+}
+
+.header-view img {
+    filter: brightness(0) invert(1);
+    height: 100%;
+}
+
+.header-more-information  {
+    position: fixed;
+    top: 20vh;
+    left: 5%;
+    width: 20vw;
+    height: 10vh;
+
+    box-sizing: border-box;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-color);
+    z-index: 999;
+
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+
+    transform: translateY(-120%);
+    opacity: 0;
+    
+    visibility: hidden;
+}
+
+header:hover {
+    cursor: pointer;
+
+    .header-more-information {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.header-head {
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-head img {
+    filter: brightness(0) invert(1);
+    max-width: 100%; 
+    width: 50px; 
+    height: 50px; 
+    object-fit: contain
+}
+
+
 .main-navigation {
     text-decoration: none;
     position: fixed;
@@ -43,7 +152,7 @@ body.main {
     z-index: 999;
     left: 50%;
     transform: translateX(-50%);
-    width: 80vw;
+    width: 90vw;
     height: 10vh;
     border-radius: 0%;
     box-sizing: border-box;
