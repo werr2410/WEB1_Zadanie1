@@ -956,4 +956,12 @@ header:hover {
         height: 26px;
         border-width: 2px;
     }
+
+    .schedule-filters {
+        flex-direction: column;
+    }
+
+    .Schedule-title {
+        margin-bottom: 4vh;
+    }
 }
