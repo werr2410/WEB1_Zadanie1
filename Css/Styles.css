@@ -152,7 +152,7 @@ header:hover {
     z-index: 999;
     left: 50%;
     transform: translateX(-50%);
-    width: 90vw;
+    width: calc(81vw - 20px );
     height: 10vh;
     border-radius: 0%;
     box-sizing: border-box;
@@ -456,9 +456,30 @@ header:hover {
     transition: background 0.3s;
 }
  
-.filter-btn.active, .filter-btn:hover {
+.active-nav {
     background: rgba(255, 255, 255, 0.3);
     border-color: var(--text-color);
+    border-radius: var(--radius);
+    max-width: 8vw;
+    padding: 1vh 9vw;
+
+    animation: smooth-blink 2s ease-in-out infinite;
+}
+
+
+.filter-btn.active, .filter-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    animation: smooth-blink 2s ease-in-out infinite;
+    border-color: var(--text-color);
+}
+
+@keyframes smooth-blink {
+    0%, 100% {
+        background: rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        background: rgba(255, 255, 255, 0.1);
+    }
 }
 
 .hidden-message {
