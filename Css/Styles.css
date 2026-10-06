@@ -964,4 +964,13 @@ header:hover {
     .Schedule-title {
         margin-bottom: 4vh;
     }
+
+    .map-controls {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .map-controls select {
+        width: 100%;
+    }
 }
