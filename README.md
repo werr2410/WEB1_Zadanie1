@@ -1,4 +1,9 @@
 
+Source links:
+All icons and Nagiev`s photos:
+https://www.iconarchive.com
+https://vk.ru/album-54855072_175328672
+
 
 ** FONT LICENSE **
 
