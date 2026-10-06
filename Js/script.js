@@ -13,7 +13,7 @@ const SCHEDULE = [
             null,
             {title: "<strong> Digital Communication 2</strong> <br> <span>AB300</span>", firstPart: true, type: "lection" },
             null,
-            {title: "<strong> Prenosove systemy a siete </strong><br><span>AB150</span>", firstPart: true, type: "lection" },
+            {title: "<strong> Prenosové systémy a siete </strong><br><span>AB150</span>", firstPart: true, type: "lection" },
             null
     ]
 }, {
@@ -28,10 +28,10 @@ const SCHEDULE = [
 }, {
     time: 10,
     items: [
-        {title: "<strong> Siete novej generacie </strong><br><span> B715</span>", firstPart: true, type: "lection" },
-        {title: "<strong> Web tecnology 1</strong><br><span>CD150</span>", firstPart: true, type: "lection" },
+        {title: "<strong> Siete novej generácie </strong><br><span> B715</span>", firstPart: true, type: "lection" },
+        {title: "<strong> Web technology 1</strong><br><span>CD150</span>", firstPart: true, type: "lection" },
         null,
-        {title: "<strong> Spracovanie multimedia </strong><br><span>B427</span>", firstPart: true, type: "practical" },
+        {title: "<strong> Spracovanie multimédií </strong><br><span>B427</span>", firstPart: true, type: "practical" },
         null
     ]
 }, {
@@ -39,7 +39,7 @@ const SCHEDULE = [
     items: [
         {title: "NGN", firstPart: false, type: "lection" },
         {title: "WEB1", firstPart: false, type: "lection" },
-        {title: "<strong> Telesna kultura 5 </strong><br><span>E009</span>", firstPart: true, type: "PE" },
+        {title: "<strong> Telesná kultúra 5 </strong><br><span>E009</span>", firstPart: true, type: "PE" },
         {title: "SPMM", firstPart: false, type: "practical" },
         null,
     ]
@@ -55,10 +55,10 @@ const SCHEDULE = [
 }, {
     time: 13,
     items: [
-        {title: "<strong>Webove technologie 1</strong><br><span>C137</span>", firstPart: true, type: "practical" },
+        {title: "<strong>Webové technológie 1</strong><br><span>C137</span>", firstPart: true, type: "practical" },
         {title: "<strong>Digital Communication 2</strong><br><span>B617</span>", firstPart: true, type: "practical" },
-        {title: "<strong>Spracovanie multimedia</strong><br><span>AB150</span>", firstPart: true, type: "lection" },
-        {title: "<strong>Prenosove systemy a siete</strong><br><span>AB150</span>", firstPart: true, type: "practical" },
+        {title: "<strong>Spracovanie multimédií</strong><br><span>AB150</span>", firstPart: true, type: "lection" },
+        {title: "<strong>Prenosové systémy a siete</strong><br><span>AB150</span>", firstPart: true, type: "practical" },
         null
     ]
 }, {
@@ -71,7 +71,7 @@ const SCHEDULE = [
         null
     ]},
 
-    { time: 15, items: [{title: "<strong>Siete novej generacie</strong><br><span>B527</span>", firstPart: true, type: "practical" }, null, null, null, null ]},
+    { time: 15, items: [{title: "<strong>Siete novej generácie</strong><br><span>B527</span>", firstPart: true, type: "practical" }, null, null, null, null ]},
     { time: 16, items: [ {title: "NGN", firstPart: false, type: "practical" }, null, null, null, null ]},
     { time: 17, items: [ null, null, null, null, null ]},
     { time: 18, items: [ null, null, null, null, null ] },
@@ -259,6 +259,16 @@ function initSemesterProgress() {
     if (!progressBarFill || !progressPercentEl) return;
 
     const now = new Date();
+
+    if (now > SEMESTER_END) {
+   
+        const containers = document.getElementById("dates-sch");
+        container.innerHTML = '<div class="semester-ended-text">Semester už sa skončil.</div>';
+        containers.style.display = "none";
+
+        return;
+    }
+
     const totalDuration = SEMESTER_END - SEMESTER_START;
     const elapsed = now - SEMESTER_START;
 
@@ -278,8 +288,6 @@ function initSemesterProgress() {
 }
 
 function initScheduleTracker(day, hour) {
-    
-
     let now = new Date();
     let currentDay = (day !== undefined) ? day : now.getDay();
     let currentHour = (hour !== undefined) ? hour : now.getHours();
