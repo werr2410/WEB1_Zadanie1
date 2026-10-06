@@ -18,7 +18,7 @@
 <body class="main">
 
     <header>
-    <section class="mobile-header">
+        <section class="mobile-header">
             <div class="buttons">
                 <button class="hamburger-btn Grey-Glass" aria-label="Menu" id="hamburgerToggle">
                     <span></span>
@@ -66,9 +66,9 @@
                     </li>
                 </ul>
             </nav>
-    </section>
+        </section>
 
-    <section class="Grey-Glass header-view">
+        <section class="Grey-Glass header-view">
             <img src="../Img/Icons/Icon.png" alt="AH">
             <div>Andrii Horbunov</div>
         </section>
@@ -78,7 +78,6 @@
         <section class="Grey-Glass header-more-information">
             <p class="header-slogan"> Buď na koni, alebo pod koňom </p>
         </section>
-
     </header>
 
     <main class="main-block-information Grey-Glass">
@@ -93,7 +92,7 @@
                 <div class="workspace-image-wrapper">
                     <img src="../Img/DeskAI-2.png" alt="Môj pracovný stôl a setup" class="workspace-img" loading="lazy">
                     
-                    <div class="hotspot" style="top: 30%; left: 75%;" tabindex="0">
+                    <div class="hotspot" style="top: 30%; left: 75%;" tabindex="0" data-title="Sieťový prvok / Router" data-desc="Zariadenie pre praktické testovanie prenosových systémov a konfiguráciu smerovania v sieťach.">
                         <span class="hotspot-dot"></span>
                         <div class="workspace-panel">
                             <h3>Sieťový prvok / Router</h3>
@@ -101,7 +100,7 @@
                         </div>
                     </div>
 
-                    <div class="hotspot" style="top: 40%; left: 50%;" tabindex="0">
+                    <div class="hotspot" style="top: 40%; left: 50%;" tabindex="0" data-title="Hlavný monitor" data-desc="Pracovná plocha pre vývoj webových aplikácií, písanie dokumentácie a sledovanie prednášok.">
                         <span class="hotspot-dot"></span>
                         <div class="workspace-panel">
                             <h3>Hlavný monitor</h3>
@@ -109,7 +108,7 @@
                         </div>
                     </div>
 
-                    <div class="hotspot" style="top: 70%; left: 45%;" tabindex="0">
+                    <div class="hotspot" style="top: 70%; left: 45%;" tabindex="0" data-title="Mechanická klávesnica" data-desc="Nástroj na efektívne písanie kódu v angličtine bez diakritiky a správu systémov.">
                         <span class="hotspot-dot"></span>
                         <div class="workspace-panel">
                             <h3>Mechanická klávesnica</h3>
@@ -117,7 +116,7 @@
                         </div>
                     </div>
 
-                    <div class="hotspot" style="top: 60%; left: 75%;" tabindex="0">
+                    <div class="hotspot" style="top: 60%; left: 75%;" tabindex="0" data-title="Meracia technika" data-desc="Využívaná pri analýze signálov pre predmet Analógovo-číslicové spracovanie signálov.">
                         <span class="hotspot-dot"></span>
                         <div class="workspace-panel">
                             <h3>Meracia technika</h3>
@@ -125,7 +124,7 @@
                         </div>
                     </div>
 
-                    <div class="hotspot" style="top: 70%; left: 85%;" tabindex="0">
+                    <div class="hotspot" style="top: 70%; left: 85%;" tabindex="0" data-title="Študijné poznámky" data-desc="Schémy topológií sietí a výpočty pre digitálne komunikácie a prístupové siete.">
                         <span class="hotspot-dot"></span>
                         <div class="workspace-panel">
                             <h3>Študijné poznámky</h3>
@@ -134,7 +133,7 @@
                     </div>
                 </div>
 
-                <div class="workspace-mobile-fallback-panel">
+                <div class="workspace-mobile-fallback-panel" id="mobileFallbackPanel">
                     <div class="default-prompt">Kliknite na niektorý bod na obrázku pre zobrazenie detailov.</div>
                 </div>
             </div>
@@ -201,6 +200,28 @@
                 });
             });
         }
+
+        const hotspots = document.querySelectorAll('.hotspot');
+        const fallbackPanel = document.getElementById('mobileFallbackPanel');
+
+        if (window.innerWidth <= 768 && fallbackPanel) {
+            hotspots.forEach(hotspot => {
+                hotspot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const title = hotspot.getAttribute('data-title');
+                    const desc = hotspot.getAttribute('data-desc');
+                    
+                    hotspots.forEach(h => h.querySelector('.hotspot-dot').style.backgroundColor = 'var(--accent-color)');
+                    hotspot.querySelector('.hotspot-dot').style.backgroundColor = '#f59e0b';
+
+                    fallbackPanel.innerHTML = `
+                        <h3 style="color: var(--accent-color); margin: 0 0 5px 0; font-size: 1rem;">${title}</h3>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">${desc}</p>
+                    `;
+                });
+            });
+        }
     </script>
+
 </body>
 </html>

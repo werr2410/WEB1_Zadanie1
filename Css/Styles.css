@@ -314,6 +314,10 @@ header:hover {
     box-sizing: border-box;
 }
 
+.Profile-me-text-container img {
+    float: left;
+}
+
 .cv-photo-container img {
     width: 100%;
     max-width: 150px;
@@ -697,34 +701,45 @@ header:hover {
 }
 
 @media (max-width: 768px) {
+    body.main {
+        background-image: none;
+        min-width: 100%;
+        overflow-x: hidden;
+    }
+
     .mobile-header {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+        margin-top: 15px;
+        box-sizing: border-box;
     }
 
     .mobile-header-view {
         z-index: 999;
-
-        width: 65vw;
-        height: 10vh;
-
+        width: 70%;
+        height: 50px;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        gap: 10px;
-
+        gap: 12px;
+        padding: 0 15px;
+        box-sizing: border-box;
         color: var(--text-color);
-
-        transition: height 0.4s ease;
+        font-size: 0.95rem;
     }
 
     .mobile-header-view {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        object-fit: contain;
     }
+
+
 
     .mobile-header-view * {
         height: 50%;
@@ -738,10 +753,8 @@ header:hover {
     }
 
     .mobile-header-view div {
-        display: flex;
-        align-items: center;
-
         border-bottom: 1px solid grey;
+        padding-bottom: 2px;
     }
 
     .mobile-header-view img {
@@ -771,6 +784,12 @@ header:hover {
     .Profile-me-text-container {
         margin: 0;
         padding: 0;
+    }
+
+    .Profile-me-text-container img {
+        float:none;
+        width: 60vw;
+        height: 30vh;
     }
 
     body.main {
@@ -915,5 +934,26 @@ header:hover {
         padding: 1vh 1vw !important; 
         max-height: none !important;
         animation: none !important; 
+    }
+
+    .workspace-panel {
+        display: none !important;
+    }
+
+    .workspace-mobile-fallback-panel {
+        display: block;
+        margin-top: 15px;
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid var(--border-color);
+        padding: 15px;
+        border-radius: var(--radius);
+        min-height: 70px;
+        box-sizing: border-box;
+    }
+
+    .hotspot-dot {
+        width: 26px;
+        height: 26px;
+        border-width: 2px;
     }
 }
