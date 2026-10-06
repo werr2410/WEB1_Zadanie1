@@ -2,8 +2,7 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Životopis</title>
     <link rel="icon" type="image/png" href="../Img/Icons/Icon.png">
     <meta name="description" content="Profesijný životopis Andria Horbunova: študenta IKT na FEI STU, programátora v C/C++, C# (.NET) a tvorcu desktopových aplikácií či nástrojov.">
@@ -12,7 +11,6 @@
     <meta property="og:description" content="Pozrite si môj životopis: vzdelanie, počítačové zručnosti (C++, C#, .NET, SQL) a realizované projekty.">
     <meta property="og:image" content="../Img/Nagiev3.png">
     <meta property="og:type" content="profile">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../Css/Styles.css">
     <link rel="stylesheet" href="../Css/print.css">
@@ -20,9 +18,59 @@
 <body class="main">
 
     <header>
-        <section class="Grey-Glass header-view">
-            <img src="../Img/Icons/Icon.png" alt="AH">
+    <section class="mobile-header">
+            <div class="buttons">
+                <button class="hamburger-btn Grey-Glass" aria-label="Menu" id="hamburgerToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <section class="Grey-Glass mobile-header-view">
+                <img src="../Img/Icons/Icon.png" alt="AH">
                 <div>Andrii Horbunov</div>
+            </section>
+
+             <nav class="mobile-dropdown-nav Grey-Glass" id="mobileNav">
+                <ul>
+                    <li class="active-nav">
+                        <a class="navigation-buttons" href="./cv.html">
+                            <img src="../Img/Icons/resume.png" alt="Logo: Životopis">
+                            <div class="navigation-list-description">Životopis</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navigation-buttons" href="./workspace.html">
+                            <img src="../Img/Icons/desk.png" alt="Logo: Pracovné prostredie">
+                            <div class="navigation-list-description">Pracovné prostredie</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navigation-buttons" href="../index.html">
+                            <img src="../Img/Icons/home.png" alt="Logo: Domov">
+                            <div class="navigation-list-description">Domov</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navigation-buttons" href="./schedule.html">
+                            <img src="../Img/Icons/schdule.png" alt="Logo: Rozvrh">
+                            <div class="navigation-list-description">Rozvrh</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navigation-buttons" href="./map.html">
+                            <img src="../Img/Icons/map.png" alt="Logo: Mapa">
+                            <div class="navigation-list-description">Mapa</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    </section>
+
+    <section class="Grey-Glass header-view">
+            <img src="../Img/Icons/Icon.png" alt="AH">
+            <div>Andrii Horbunov</div>
         </section>
 
         <section class="between-section"></section>
@@ -30,6 +78,7 @@
         <section class="Grey-Glass header-more-information">
             <p class="header-slogan"> Buď na koni, alebo pod koňom </p>
         </section>
+
     </header>
 
     <main class="main-block-information Grey-Glass cv-container">
@@ -145,5 +194,24 @@
             <a href="https://github.com/werr2410/WEB1_Zadanie1" target="_blank">Odkazy na zdroje</a>
         </address>
     </footer>
+
+    <script>
+        const hamburgerToggle = document.getElementById('hamburgerToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        if (hamburgerToggle && mobileNav) {
+            hamburgerToggle.addEventListener('click', () => {
+                hamburgerToggle.classList.toggle('active');
+                mobileNav.classList.toggle('open');
+            });
+
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburgerToggle.classList.remove('active');
+                    mobileNav.classList.remove('open');
+                });
+            });
+        }
+    </script>
 </body>
 </html>

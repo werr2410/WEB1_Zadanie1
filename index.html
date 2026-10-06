@@ -2,16 +2,14 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="./Css/Styles.css">
 
     <title>O mne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./Img/Icons/Icon.png">
     
 
     <meta name="description" content="Osobná stránka Andria Horbunova, študenta 3. ročníka IKT na Fakulte elektrotechniky a informatiky STU v Bratislave. Informácie o štúdiu a kľúčových predmetoch.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="Andrii Horbunov — O mne | IKT STU">
     <meta property="og:description" content="Spoznajte ma: študent 3. ročníka IKT na FEI STU v Bratislave. Zistite viac o mojom štúdiu, zameraní a kľúčových predmetoch.">
     <meta property="og:image" content="./Img/Nagiev3.png">
@@ -20,9 +18,62 @@
 <body class="main">
 
     <header>
+
+        <section class="mobile-header">
+            <div class="buttons">
+                <button class="hamburger-btn Grey-Glass" aria-label="Menu" id="hamburgerToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <section class="Grey-Glass mobile-header-view">
+                <img src="./Img/Icons/Icon.png" alt="AH">
+                <div>Andrii Horbunov</div>
+            </section>
+
+             <nav class="mobile-dropdown-nav Grey-Glass" id="mobileNav">
+                <ul>
+                    <li>
+                        <a class="navigation-buttons" href="./Rages/cv.html">
+                            <img src="./Img/Icons/resume.png" alt="Logo: Životopis">
+                            <div class="navigation-list-description">Životopis</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navigation-buttons" href="./Rages/workspace.html">
+                            <img src="./Img/Icons/desk.png" alt="Logo: Pracovné prostredie">
+                            <div class="navigation-list-description">Pracovné prostredie</div>
+                        </a>
+                    </li>
+                    <li class="active-nav">
+                        <a class="navigation-buttons" href="#">
+                            <img src="./Img/Icons/home.png" alt="Logo: Domov">
+                            <div class="navigation-list-description">Domov</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navigation-buttons" href="./Rages/schedule.html">
+                            <img src="./Img/Icons/schdule.png" alt="Logo: Rozvrh">
+                            <div class="navigation-list-description">Rozvrh</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navigation-buttons" href="./Rages/map.html">
+                            <img src="./Img/Icons/map.png" alt="Logo: Mapa">
+                            <div class="navigation-list-description">Mapa</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+
+        
         <section class="Grey-Glass header-view">
             <img src="./Img/Icons/Icon.png" alt="AH">
-                <div>Andrii Horbunov</div>
+            <div>Andrii Horbunov</div>
         </section>
 
         <section class="between-section"></section>
@@ -30,6 +81,7 @@
         <section class="Grey-Glass header-more-information">
             <p class="header-slogan"> Buď na koni, alebo pod koňom </p>
         </section>
+
     </header>
 
     <main class="main-block-information Grey-Glass">
@@ -120,5 +172,24 @@
             <a href="https://github.com/werr2410/WEB1_Zadanie1" target="_blank">Odkazy na zdroje</a>
         </address>
     </footer>
+
+    <script>
+        const hamburgerToggle = document.getElementById('hamburgerToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        if (hamburgerToggle && mobileNav) {
+            hamburgerToggle.addEventListener('click', () => {
+                hamburgerToggle.classList.toggle('active');
+                mobileNav.classList.toggle('open');
+            });
+
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburgerToggle.classList.remove('active');
+                    mobileNav.classList.remove('open');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
