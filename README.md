@@ -1,3 +1,8 @@
+Andrii Horbunov - IKT
+
+link - https://webte1.fei.stuba.sk/~xhorbunov/Z1
+
+The page contains basic information about a fictional character, which is a combination of me and a photograph of Dmitry Nagiyev. During the task, artificial intelligence was used to generate ideas, implement the intended block/topic/idea, and help find bugs.
 
 Source links:
 All icons and Nagiev`s photos:
