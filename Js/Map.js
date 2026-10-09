@@ -140,3 +140,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateUI();
 });
+
+
+// MOBILE - hamburger menu
+
+const hamburgerToggle = document.getElementById('hamburgerToggle');
+const mobileNav = document.getElementById('mobileNav');
+
+if (hamburgerToggle && mobileNav) {
+    hamburgerToggle.addEventListener('click', () => {
+        hamburgerToggle.classList.toggle('active');
+        mobileNav.classList.toggle('open');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerToggle.classList.remove('active');
+            mobileNav.classList.remove('open');
+        });
+    });
+}

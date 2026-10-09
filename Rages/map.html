@@ -13,12 +13,13 @@
     <meta property="og:image" content="../Img/Nagiev3.png">
     <meta property="og:type" content="website">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     <link rel="stylesheet" href="../Css/Styles.css">
 </head>
 <body class="main">
 
     <header>
-    <section class="mobile-header">
+    <div class="mobile-header">
             <div class="buttons">
                 <button class="hamburger-btn Grey-Glass" aria-label="Menu" id="hamburgerToggle">
                     <span></span>
@@ -27,10 +28,10 @@
                 </button>
             </div>
 
-            <section class="Grey-Glass mobile-header-view">
+            <div class="Grey-Glass mobile-header-view">
                 <img src="../Img/Icons/Icon.png" alt="AH">
                 <div>Andrii Horbunov</div>
-            </section>
+            </div>
 
              <nav class="mobile-dropdown-nav Grey-Glass" id="mobileNav">
                 <ul>
@@ -68,18 +69,18 @@
                     </li>
                 </ul>
             </nav>
-    </section>
+        </div>
 
-    <section class="Grey-Glass header-view">
+        <div class="Grey-Glass header-view">
             <img src="../Img/Icons/Icon.png" alt="AH">
             <div>Andrii Horbunov</div>
-        </section>
+        </div>
 
-        <section class="between-section"></section>
+        <div class="between-section"></div>
 
-        <section class="Grey-Glass header-more-information">
-            <p class="header-slogan"> Buď na koni, alebo pod koňom </p>
-        </section>
+        <div class="Grey-Glass header-more-information">
+            <p class="header-slogan"> študent IKT, zaujímajú ma sieťové technológie </p>
+        </div>
 
     </header>
     
@@ -113,12 +114,9 @@
         <div id="distance-result"></div>
 
         <div class="saved-points-container">
-            <h3>Pridané body</h3>
+            <h2>Pridané body</h2>
             <ul id="points-list"></ul>
         </div>
-
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     </main>
 
 
@@ -164,29 +162,15 @@
     <footer class="main-footer">
         <address>
             Vytvoril <strong>Andrii Horbunov</strong> (2026) | 
-            Kontakt: <a href="mailto:vas-email@stuba.sk">xhorbunov@stuba.sk</a> | 
+            Kontakt: <a href="mailto:xhorbunov@stuba.sk">xhorbunov@stuba.sk</a> | 
             <a href="https://github.com/werr2410/WEB1_Zadanie1" target="_blank">Odkazy na zdroje</a>
         </address>
     </footer>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="../Js/Map.js"></script>
     <script>
-        const hamburgerToggle = document.getElementById('hamburgerToggle');
-        const mobileNav = document.getElementById('mobileNav');
-
-        if (hamburgerToggle && mobileNav) {
-            hamburgerToggle.addEventListener('click', () => {
-                hamburgerToggle.classList.toggle('active');
-                mobileNav.classList.toggle('open');
-            });
-
-            mobileNav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburgerToggle.classList.remove('active');
-                    mobileNav.classList.remove('open');
-                });
-            });
-        }
+        
     </script>
 </body>
 </html>
